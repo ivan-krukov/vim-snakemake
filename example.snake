@@ -1,13 +1,12 @@
 rule NAME:
 	input: 
 		"path/to/inputfile", "path/to/other/inputfile"
-	output: 
+	output:
 		"path/to/outputfile", somename = "path/to/another/outputfile"
-	run: 
+	run:
 		for f in input:
 			# do magic
 			with open(output[0], "w") as out:
 				out.write("...")
 		with open(output.somename, "w") as out:
-			 out.write("...")
-
+			out.write("...")
