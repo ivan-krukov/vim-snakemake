@@ -34,10 +34,11 @@ syn keyword pythonStatement	input output params message threads resources
 syn keyword pythonStatement	version run shell benchmark snakefile log script
 syn keyword pythonStatement	rule subworkflow nextgroup=pythonFunction skipwhite
 
+syn keyword pythonBuiltin expand config temp protected
+
 " similar to special def and class treatment from python.vim, except
 " parenthetical part of def and class
-syn match   pythonFunction
-      \ "\%(\%(rule\s\|subworkflow\s\)\s*\)\@<=\h*" contained
+syn match pythonFunction "\%(\%(rule\s\|subworkflow\s\)\s*\)\@<=\h*" contained
 
 syn sync match pythonSync grouphere NONE "^\s*\%(rule\|subworkflow\)\s\+\h\w*\s*"
 
