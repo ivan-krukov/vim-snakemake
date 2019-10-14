@@ -30,16 +30,16 @@ source $VIMRUNTIME/syntax/python.vim
 syn keyword pythonStatement	include workdir onsuccess onerror
 syn keyword pythonStatement	ruleorder localrules configfile
 syn keyword pythonStatement	touch protected temp wrapper
-syn keyword pythonStatement	input output params message threads resources
-syn keyword pythonStatement	version run shell benchmark snakefile log script
-syn keyword pythonStatement	rule subworkflow nextgroup=pythonFunction skipwhite
+syn keyword pythonStatement	input output params message threads priority resources wildcard_constraints
+syn keyword pythonStatement	version run shell benchmark snakefile log script shadow group cwl
+syn keyword pythonStatement	rule subworkflow checkpoint nextgroup=pythonFunction skipwhite
 
-syn keyword pythonBuiltin expand config temp protected
+syn keyword pythonBuiltin expand config temp protected directory ancient pipe otherworkflow
 
 " similar to special def and class treatment from python.vim, except
 " parenthetical part of def and class
-syn match pythonFunction "\%(\%(rule\s\|subworkflow\s\)\s*\)\@<=\h*" contained
+syn match pythonFunction "\%(\%(rule\s\|subworkflow\s\|checkpoint\s\)\s*\)\@<=\h*" contained
 
-syn sync match pythonSync grouphere NONE "^\s*\%(rule\|subworkflow\)\s\+\h\w*\s*"
+syn sync match pythonSync grouphere NONE "^\s*\%(rule\|subworkflow\|checkpoint\)\s\+\h\w*\s*"
 
 let b:current_syntax = "snakemake"
